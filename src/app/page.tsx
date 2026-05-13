@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Image from 'next/image';
 import {
   Cpu,
@@ -57,21 +58,25 @@ const products = [
     name: 'NOVA AI',
     description: 'Multi-agent operating system for business operations',
     status: 'Active',
+    href: '/nova',
   },
   {
     name: 'DryTrace',
     description: 'Automated drying report generation for restoration contractors',
     status: 'Active',
+    href: '/drytrace',
   },
   {
     name: 'Triply',
     description: 'AI-powered travel and itinerary platform',
     status: 'In Development',
+    href: '/triply',
   },
   {
     name: 'PSS Automations',
     description: 'Workflow automation infrastructure and deployment engine',
     status: 'Active',
+    href: '/automations',
   },
 ];
 
@@ -260,7 +265,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
-                <div className="glass-card p-8 h-full transition-all duration-300 group">
+                <Link href={product.href} className="glass-card p-8 h-full transition-all duration-300 group block">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-cinzel text-lg font-semibold text-pss-white tracking-wide">
                       {product.name}
@@ -282,7 +287,7 @@ export default function Home() {
                     <span>View Details</span>
                     <ArrowRight size={12} />
                   </div>
-                </div>
+                </Link>
               </SectionReveal>
             ))}
           </div>
