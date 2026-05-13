@@ -107,7 +107,7 @@ export default function ServicesPage() {
               key={i}
               {...fadeUp}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20 ${
-                i > 0 ? 'border-t border-border/30' : ''
+                i > 0 ? 'border-t border-pss-gold-dim/30' : ''
               }`}
             >
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
@@ -117,10 +117,10 @@ export default function ServicesPage() {
                 >
                   <service.icon size={24} style={{ color: service.color }} />
                 </div>
-                <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary mb-4">
+                <h2 className="font-cinzel text-2xl md:text-4xl text-pss-white mb-4">
                   {service.title}
                 </h2>
-                <p className="text-text-muted text-lg leading-relaxed mb-8">
+                <p className="text-pss-grey text-lg leading-relaxed mb-8">
                   {service.description}
                 </p>
                 {service.link && (
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                         className="flex-shrink-0 mt-0.5"
                         style={{ color: service.color }}
                       />
-                      <span className="text-text-primary text-sm">{feature.text}</span>
+                      <span className="text-pss-white text-sm">{feature.text}</span>
                     </div>
                   ))}
                 </div>

@@ -2,73 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: #F8F8FF;
-  background: #0A0A0F;
+  color: #F5F5F0;
+  background: #080808;
   font-family: 'Inter', sans-serif;
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.3);
-  color: #F8F8FF;
+  background: rgba(201, 168, 76, 0.3);
+  color: #F5F5F0;
 }
 
 @layer components {
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .glass-nav {
+    background: rgba(8, 8, 8, 0.85);
     backdrop-filter: blur(12px);
-    border-radius: 12px;
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  .glow-border {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.05);
+  .glass-card {
+    background: rgba(17, 17, 17, 0.8);
+    border: 1px solid rgba(122, 98, 48, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-lg transition-all duration-300;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  .glass-card:hover {
+    border-color: rgba(201, 168, 76, 0.4);
+    box-shadow: 0 0 24px rgba(201, 168, 76, 0.12);
   }
 
-  .btn-primary:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-    transform: translateY(-1px);
+  .gold-text {
+    background: linear-gradient(135deg, #E8C97A 0%, #C9A84C 50%, #E8C97A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-border text-text-primary font-medium rounded-lg transition-all duration-300 hover:border-primary/50 hover:bg-primary/5;
+  .gold-underline {
+    position: relative;
+    display: inline-block;
   }
 
-  .grid-bg {
-    background-image:
-      linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #C9A84C, transparent);
   }
 
-  .dot-bg {
-    background-image: radial-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px);
-    background-size: 30px 30px;
+  .btn-gold-outline {
+    @apply inline-flex items-center justify-center px-7 py-3 border border-pss-gold text-pss-gold font-cinzel text-sm tracking-widest transition-all duration-300;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  .btn-gold-outline:hover {
+    background: rgba(201, 168, 76, 0.1);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+  }
+
+  .btn-gold-fill {
+    @apply inline-flex items-center justify-center px-7 py-3 bg-pss-gold text-pss-black font-cinzel text-sm tracking-widest font-semibold transition-all duration-300;
+  }
+
+  .btn-gold-fill:hover {
+    background: #b89840;
+    box-shadow: 0 0 24px rgba(201, 168, 76, 0.25);
+  }
+
+  .section-dark {
+    background: #111111;
+  }
+
+  .ember-glow {
+    background: radial-gradient(ellipse at center, rgba(139, 58, 15, 0.2) 0%, transparent 70%);
   }
 }
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.5); }
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes scroll-hint {
+  0% { opacity: 0; transform: translateY(-8px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

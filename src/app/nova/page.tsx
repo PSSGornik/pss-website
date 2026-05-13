@@ -63,14 +63,14 @@ export default function NovaPage() {
         subheadline="A hierarchical multi-agent system that manages tasks, routes decisions, tracks operations, and keeps your business moving — 24/7, without a manager."
         accentColor="#8B5CF6"
       >
-        <Link href="/contact?product=nova" className="btn-primary text-lg px-8 py-4">
+        <Link href="/contact?product=nova" className="btn-gold-fill text-sm px-8 py-4">
           Deploy NOVA for Your Business
           <ArrowRight size={18} className="ml-2" />
         </Link>
       </PageHero>
 
       {/* Architecture Diagram */}
-      <section className="py-24 bg-surface/50">
+      <section className="py-24 section-dark">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -79,11 +79,11 @@ export default function NovaPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-label uppercase text-accent mb-4 block">Architecture</span>
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
+            <span className="text-label uppercase text-pss-gold-light mb-4 block">Architecture</span>
+            <h2 className="font-cinzel text-2xl md:text-4xl text-pss-white">
               Hierarchical Agent Structure
             </h2>
-            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
+            <p className="mt-4 text-pss-grey max-w-2xl mx-auto">
               NOVA operates as a coordinated team of AI agents, each specialized for a domain of your business. The CEO Agent provides strategic oversight while COO Sydney manages day-to-day operations.
             </p>
           </motion.div>
@@ -104,8 +104,8 @@ export default function NovaPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-label uppercase text-accent mb-4 block">Capabilities</span>
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
+            <span className="text-label uppercase text-pss-gold-light mb-4 block">Capabilities</span>
+            <h2 className="font-cinzel text-2xl md:text-4xl text-pss-white">
               What NOVA Does
             </h2>
           </motion.div>
@@ -113,11 +113,11 @@ export default function NovaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map((cap, i) => (
               <GlassCard key={i}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-accent/10">
-                  <cap.icon size={20} className="text-accent" />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-pss-gold/10">
+                  <cap.icon size={20} className="text-pss-gold-light" />
                 </div>
-                <h3 className="font-heading text-h3 text-text-primary mb-2">{cap.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">{cap.description}</p>
+                <h3 className="font-cinzel text-xl font-semibold text-pss-white mb-2">{cap.title}</h3>
+                <p className="text-pss-grey text-sm leading-relaxed">{cap.description}</p>
               </GlassCard>
             ))}
           </div>

@@ -9,14 +9,14 @@ export default function TermsPage() {
   return (
     <section className="pt-32 pb-24">
       <div className="max-w-3xl mx-auto px-6">
-        <h1 className="font-heading text-h1-mobile md:text-h1 text-text-primary mb-4">
+        <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-pss-white mb-4">
           Terms &amp; Conditions
         </h1>
-        <p className="text-text-muted mb-12">Effective Date: May 12, 2026</p>
+        <p className="text-pss-grey mb-12">Effective Date: May 12, 2026</p>
 
-        <div className="prose-custom space-y-10 text-text-muted leading-relaxed">
+        <div className="prose-custom space-y-10 text-pss-grey leading-relaxed">
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">1. Acceptance of Terms</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">1. Acceptance of Terms</h2>
             <p>
               By accessing or using the services provided by Prometheus Strategic Solutions LLC
               (&quot;PSS,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), including but not limited to our website at
@@ -32,19 +32,19 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">2. Services Description</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">2. Services Description</h2>
             <p>PSS provides the following categories of services:</p>
             <ul className="list-disc list-inside mt-3 space-y-2">
               <li>
-                <strong className="text-text-primary">AI Automation Services:</strong> Custom workflow automation,
+                <strong className="text-pss-white">AI Automation Services:</strong> Custom workflow automation,
                 AI agent systems (including NOVA), and process optimization for business operations.
               </li>
               <li>
-                <strong className="text-text-primary">SaaS Products:</strong> Software-as-a-Service products
+                <strong className="text-pss-white">SaaS Products:</strong> Software-as-a-Service products
                 including DryTrace and other proprietary platforms, provided on a subscription basis.
               </li>
               <li>
-                <strong className="text-text-primary">Consulting &amp; Integration:</strong> Strategy consulting,
+                <strong className="text-pss-white">Consulting &amp; Integration:</strong> Strategy consulting,
                 systems architecture, third-party platform integration, and ongoing operational support.
               </li>
             </ul>
@@ -55,20 +55,20 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">3. Payment Terms</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">3. Payment Terms</h2>
             <p>
-              <strong className="text-text-primary">Subscription Services:</strong> SaaS products are billed
+              <strong className="text-pss-white">Subscription Services:</strong> SaaS products are billed
               on a monthly basis at the rates published on the applicable product page or as agreed
               in writing. Payment is due on the first day of each billing cycle. All fees are
               non-refundable except as required by applicable law.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">Project Work:</strong> Custom automation projects and
+              <strong className="text-pss-white">Project Work:</strong> Custom automation projects and
               consulting engagements are billed as outlined in the applicable SOW. Unless otherwise
               specified, project invoices are due net-30 from the date of invoice.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">Late Payments:</strong> Overdue invoices may incur a late
+              <strong className="text-pss-white">Late Payments:</strong> Overdue invoices may incur a late
               fee of 1.5% per month or the maximum amount permitted by law, whichever is less. PSS
               reserves the right to suspend services for accounts with outstanding balances exceeding
               30 days past due.
@@ -76,29 +76,29 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">4. Intellectual Property</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">4. Intellectual Property</h2>
             <p>
-              <strong className="text-text-primary">PSS IP:</strong> All systems, code, workflows,
+              <strong className="text-pss-white">PSS IP:</strong> All systems, code, workflows,
               architectures, frameworks, methodologies, and tools developed by PSS remain the
               exclusive intellectual property of Prometheus Strategic Solutions LLC. This includes,
               but is not limited to, the NOVA system, DryTrace platform, custom automation
               frameworks, and any reusable components built during an engagement.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">Client Data:</strong> All data provided by the Client or
+              <strong className="text-pss-white">Client Data:</strong> All data provided by the Client or
               generated through Client operations remains the property of the Client. PSS will not
               sell, share, or use Client data for purposes unrelated to service delivery without
               explicit written consent.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">License Grant:</strong> Upon full payment, PSS grants the
+              <strong className="text-pss-white">License Grant:</strong> Upon full payment, PSS grants the
               Client a non-exclusive, non-transferable license to use the delivered systems and
               configurations for their internal business operations.
             </p>
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">5. Confidentiality</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">5. Confidentiality</h2>
             <p>
               Both parties agree to maintain the confidentiality of any proprietary or sensitive
               information disclosed during the engagement. This includes business processes,
@@ -113,7 +113,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">6. Limitation of Liability</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">6. Limitation of Liability</h2>
             <p>
               To the maximum extent permitted by applicable law, PSS&apos;s total liability arising out
               of or related to these Terms or any services provided shall not exceed the total
@@ -128,7 +128,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">7. Disclaimer of Warranties</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">7. Disclaimer of Warranties</h2>
             <p>
               PSS provides its services on an &quot;as is&quot; and &quot;as available&quot; basis. While we strive
               for excellence in every engagement, PSS makes no warranties, express or implied,
@@ -143,20 +143,20 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">8. Termination</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">8. Termination</h2>
             <p>
-              <strong className="text-text-primary">Subscription Services:</strong> Either party may terminate
+              <strong className="text-pss-white">Subscription Services:</strong> Either party may terminate
               a subscription by providing thirty (30) days&apos; written notice prior to the next
               billing cycle. Upon termination, the Client will retain access through the end of the
               current paid period.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">Project Work:</strong> Either party may terminate a project
+              <strong className="text-pss-white">Project Work:</strong> Either party may terminate a project
               engagement with thirty (30) days&apos; written notice. The Client will be responsible
               for payment of all work completed through the termination date.
             </p>
             <p className="mt-3">
-              <strong className="text-text-primary">Immediate Termination:</strong> PSS may terminate services
+              <strong className="text-pss-white">Immediate Termination:</strong> PSS may terminate services
               immediately if the Client breaches these Terms, engages in fraudulent activity, or
               fails to pay invoices after reasonable notice and opportunity to cure.
             </p>
@@ -167,7 +167,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">9. Governing Law</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">9. Governing Law</h2>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of the
               State of Arizona, without regard to its conflict of law provisions. Any disputes
@@ -177,7 +177,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">10. Changes to Terms</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">10. Changes to Terms</h2>
             <p>
               PSS reserves the right to modify these Terms at any time. Material changes will be
               communicated to active Clients via email at least thirty (30) days before they take
@@ -187,16 +187,16 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-h3 text-text-primary mb-4">11. Contact Information</h2>
+            <h2 className="font-cinzel text-xl font-semibold text-pss-gold mb-4">11. Contact Information</h2>
             <p>
               For questions or concerns regarding these Terms, please contact us:
             </p>
             <div className="mt-3">
-              <p><strong className="text-text-primary">Prometheus Strategic Solutions LLC</strong></p>
+              <p><strong className="text-pss-white">Prometheus Strategic Solutions LLC</strong></p>
               <p>Phoenix, AZ, USA</p>
               <p>
                 Email:{' '}
-                <a href="mailto:riley@prometheusss.com" className="text-primary hover:underline">
+                <a href="mailto:riley@prometheusss.com" className="text-pss-gold hover:underline">
                   riley@prometheusss.com
                 </a>
               </p>

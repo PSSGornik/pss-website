@@ -1,286 +1,342 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
-  Zap,
-  AlertTriangle,
-  Eye,
+  Cpu,
   Bot,
-  FileText,
-  Workflow,
-  Search,
-  Blocks,
-  Rocket,
-  Settings,
+  Server,
+  Shield,
+  Code2,
+  Database,
+  ChevronDown,
+  Send,
   ArrowRight,
 } from 'lucide-react';
-import GlassCard from '@/components/GlassCard';
-import TestimonialCard from '@/components/TestimonialCard';
-import StatsBar from '@/components/StatsBar';
-import CTABanner from '@/components/CTABanner';
+import SectionReveal from '@/components/SectionReveal';
+import ContactForm from '@/components/ContactForm';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 },
-};
+const stagger = (i: number) => ({ delay: 0.15 * i, duration: 0.7, ease: 'easeOut' as const });
+
+const services = [
+  {
+    icon: Cpu,
+    title: 'AI Automation & Workflows',
+    description: 'End-to-end workflow automation that eliminates manual process debt and scales with your operation.',
+  },
+  {
+    icon: Bot,
+    title: 'Agentic Systems & AI Agents',
+    description: 'Hierarchical multi-agent architectures that coordinate, decide, and execute autonomously.',
+  },
+  {
+    icon: Server,
+    title: 'Infrastructure & DevOps',
+    description: 'Production-grade deployment pipelines, monitoring, and infrastructure that doesn\'t break at 3am.',
+  },
+  {
+    icon: Shield,
+    title: 'Federal & Defense Solutions',
+    description: 'Compliance-first AI systems designed for the regulatory and security requirements of government work.',
+  },
+  {
+    icon: Code2,
+    title: 'Custom Software Development',
+    description: 'Purpose-built applications and platforms — not off-the-shelf configurations with your logo on them.',
+  },
+  {
+    icon: Database,
+    title: 'Data Pipelines & Integration',
+    description: 'Connect, transform, and route data across your entire stack with zero manual intervention.',
+  },
+];
+
+const products = [
+  {
+    name: 'NOVA AI',
+    description: 'Multi-agent operating system for business operations',
+    status: 'Active',
+  },
+  {
+    name: 'DryTrace',
+    description: 'Automated drying report generation for restoration contractors',
+    status: 'Active',
+  },
+  {
+    name: 'Triply',
+    description: 'AI-powered travel and itinerary platform',
+    status: 'In Development',
+  },
+  {
+    name: 'PSS Automations',
+    description: 'Workflow automation infrastructure and deployment engine',
+    status: 'Active',
+  },
+];
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/[0.08] rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[300px] bg-accent/5 rounded-full blur-[120px]" />
-
-        <div className="absolute inset-0 overflow-hidden">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 rounded-full bg-primary/20 animate-[pulse-dot_3s_ease-in-out_infinite]"
-              style={{
-                left: `${10 + (i * 4.5) % 90}%`,
-                top: `${15 + (i * 7.3) % 70}%`,
-                animationDelay: `${i * 0.2}s`,
-                animationDuration: `${2 + (i % 3)}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-screen flex items-center justify-center px-6">
+        <div className="text-center max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={stagger(0)}
           >
-            <span className="text-label uppercase text-primary mb-6 block">
-              AI Automation Infrastructure
-            </span>
-            <h1 className="font-heading text-h1-mobile md:text-h1 text-text-primary max-w-5xl mx-auto text-balance">
-              The Operating System for Your Business
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
-              Prometheus Strategic Solutions builds custom AI automation
-              infrastructure for restoration contractors and home service
-              operators — so your business runs itself.
-            </p>
+            <Image
+              src="/assets/images/Prometheus_Strategic_Solutions.png"
+              alt="Prometheus Strategic Solutions"
+              width={120}
+              height={120}
+              className="mx-auto mb-8 w-24 h-24 md:w-28 md:h-28"
+              priority
+            />
           </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={stagger(1)}
+            className="font-cinzel text-5xl md:text-7xl lg:text-[80px] font-bold gold-text leading-tight"
+          >
+            PROMETHEUS
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={stagger(2)}
+            className="font-cinzel text-base md:text-xl tracking-[0.25em] text-pss-grey mt-4 uppercase"
+          >
+            Strategic Solutions
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={stagger(3)}
+            className="font-cormorant text-lg md:text-xl italic text-pss-white/80 mt-8 max-w-2xl mx-auto leading-relaxed"
+          >
+            AI Automation &amp; Agentic Systems for Organizations
+            That Can&apos;t Afford to Get It Wrong.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={stagger(4)}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-              Request a Strategy Call
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-            <Link href="/services" className="btn-secondary text-lg px-8 py-4">
-              See What We Build
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Problem Statement */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
-              Your Business Runs on Duct Tape
-            </h2>
+            <a href="#work" className="btn-gold-outline">
+              Explore Our Work
+            </a>
+            <a href="#contact" className="btn-gold-fill">
+              Get in Touch
+            </a>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <GlassCard>
-              <AlertTriangle size={24} className="text-red-400 mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">Margin Erosion</h3>
-              <p className="text-text-muted">
-                Manual processes eating your margin — every hour spent on admin is an hour not spent on revenue.
-              </p>
-            </GlassCard>
-            <GlassCard>
-              <Zap size={24} className="text-yellow-400 mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">Lost Leads</h3>
-              <p className="text-text-muted">
-                Leads falling through the cracks because follow-up depends on someone remembering.
-              </p>
-            </GlassCard>
-            <GlassCard>
-              <Eye size={24} className="text-orange-400 mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">Zero Visibility</h3>
-              <p className="text-text-muted">
-                No visibility into what&apos;s actually happening — you&apos;re flying blind on cash, jobs, and performance.
-              </p>
-            </GlassCard>
-          </div>
-
-          <motion.p
-            {...fadeUp}
-            className="text-center text-xl text-text-muted mt-12 max-w-xl mx-auto"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="mt-20"
           >
-            PSS replaces the chaos with systems that think.
-          </motion.p>
+            <a href="#services" className="inline-block" aria-label="Scroll down">
+              <ChevronDown
+                size={28}
+                className="text-pss-gold/40 animate-[scroll-hint_2s_ease-in-out_infinite]"
+              />
+            </a>
+          </motion.div>
         </div>
       </section>
 
-      {/* Solutions Overview */}
-      <section className="py-24 relative bg-surface/50">
+      {/* ─── SERVICES ─── */}
+      <section id="services" className="relative py-32 section-dark">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-label uppercase text-primary mb-4 block">Solutions</span>
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
-              What We Deploy
+          <SectionReveal className="mb-20">
+            <p className="font-cinzel text-xs tracking-[0.2em] text-pss-gold uppercase mb-4">
+              Capabilities
+            </p>
+            <h2 className="font-cinzel text-3xl md:text-5xl font-semibold text-pss-white gold-underline">
+              What We Build
             </h2>
-          </motion.div>
+          </SectionReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <GlassCard className="group">
-              <Bot size={28} className="text-primary mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">
-                NOVA AI Operating System
-              </h3>
-              <p className="text-text-muted mb-4">
-                A hierarchical multi-agent system that manages tasks, routes decisions, and keeps your business moving 24/7.
-              </p>
-              <Link
-                href="/nova"
-                className="inline-flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all"
-              >
-                Learn More <ArrowRight size={14} className="ml-1" />
-              </Link>
-            </GlassCard>
-
-            <GlassCard className="group">
-              <FileText size={28} className="text-teal mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">
-                DryTrace Reporting
-              </h3>
-              <p className="text-text-muted mb-4">
-                Automated drying reports, moisture logging, and IICRC-compliant documentation for restoration contractors.
-              </p>
-              <a
-                href="https://drytrace.prometheusss.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-teal text-sm font-medium group-hover:gap-2 transition-all"
-              >
-                View Product <ArrowRight size={14} className="ml-1" />
-              </a>
-            </GlassCard>
-
-            <GlassCard className="group">
-              <Workflow size={28} className="text-accent mb-4" />
-              <h3 className="font-heading text-h3 text-text-primary mb-2">
-                Custom Workflow Automation
-              </h3>
-              <p className="text-text-muted mb-4">
-                End-to-end automation of your lead pipeline, CRM, scheduling, invoicing, and reporting.
-              </p>
-              <Link
-                href="/services"
-                className="inline-flex items-center text-accent text-sm font-medium group-hover:gap-2 transition-all"
-              >
-                Explore Services <ArrowRight size={14} className="ml-1" />
-              </Link>
-            </GlassCard>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-label uppercase text-primary mb-4 block">Process</span>
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
-              From Chaos to Automated
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { step: '01', icon: Search, title: 'Discovery', desc: 'We audit your workflows, tools, and bottlenecks.' },
-              { step: '02', icon: Blocks, title: 'Architecture', desc: 'We design the automation stack around your operations.' },
-              { step: '03', icon: Rocket, title: 'Deployment', desc: 'We build, test, and deploy your systems end-to-end.' },
-              { step: '04', icon: Settings, title: 'Operate', desc: 'We monitor, optimize, and scale as your business grows.' },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative"
-              >
-                <div className="glass-card p-6 text-center h-full">
-                  <span className="text-5xl font-heading font-bold text-primary/10">{item.step}</span>
-                  <item.icon size={28} className="text-primary mx-auto my-3" />
-                  <h3 className="font-heading text-h3 text-text-primary mb-2">{item.title}</h3>
-                  <p className="text-text-muted text-sm">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => (
+              <SectionReveal key={i} delay={i * 0.08}>
+                <div className="glass-card p-8 h-full transition-all duration-300 group">
+                  <service.icon
+                    size={28}
+                    className="text-pss-gold mb-5 group-hover:text-pss-gold-light transition-colors"
+                  />
+                  <h3 className="font-cinzel text-base font-semibold text-pss-white mb-3 tracking-wide">
+                    {service.title}
+                  </h3>
+                  <p className="text-pss-grey text-sm leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-px bg-border" />
-                )}
-              </motion.div>
+              </SectionReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-24 relative bg-surface/50">
+      {/* ─── ABOUT ─── */}
+      <section id="about" className="relative py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-label uppercase text-primary mb-4 block">Results</span>
-            <h2 className="font-heading text-h2-mobile md:text-h2 text-text-primary">
-              Built for the Trades
-            </h2>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <SectionReveal>
+              <p className="font-cinzel text-xs tracking-[0.2em] text-pss-gold uppercase mb-4">
+                Philosophy
+              </p>
+              <h2 className="font-cinzel text-3xl md:text-5xl font-semibold text-pss-white gold-underline mb-8">
+                Built on First Principles
+              </h2>
+              <div className="space-y-5 text-pss-grey leading-relaxed">
+                <p>
+                  Prometheus Strategic Solutions exists because most organizations are sold AI
+                  that doesn&apos;t work in production. We build systems that do — from the
+                  infrastructure up, not the pitch deck down.
+                </p>
+                <p>
+                  Every engagement starts with architecture, not aesthetics. We map your operational
+                  reality, identify the highest-leverage automation points, and deploy systems
+                  designed to run without supervision. No dashboards you&apos;ll never check. No
+                  integrations that break on the first edge case.
+                </p>
+                <p>
+                  We build for organizations where failure has real consequences — where &quot;it
+                  usually works&quot; isn&apos;t good enough.
+                </p>
+              </div>
+            </SectionReveal>
 
-          {/* TODO: replace placeholder testimonials with real client testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <TestimonialCard
-              quote="PSS automated our entire lead intake process. We went from losing 30% of our calls to capturing every single one."
-              name="Placeholder Name"
-              role="Owner"
-              company="Restoration Co."
-            />
-            <TestimonialCard
-              quote="The NOVA system runs our morning ops briefing automatically. My team gets task assignments before they even clock in."
-              name="Placeholder Name"
-              role="Operations Manager"
-              company="Service Company"
-            />
-            <TestimonialCard
-              quote="DryTrace cut our report generation from 45 minutes per job to zero. Our techs love it."
-              name="Placeholder Name"
-              role="Field Supervisor"
-              company="Drying Contractor"
-            />
+            <SectionReveal delay={0.2} className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 ember-glow scale-150" />
+                <Image
+                  src="/assets/images/Prometheus_Strategic_Solutions.png"
+                  alt="Prometheus phoenix"
+                  width={400}
+                  height={400}
+                  className="relative w-72 md:w-96 h-auto"
+                  loading="lazy"
+                />
+              </div>
+            </SectionReveal>
           </div>
 
-          <StatsBar
-            stats={[
-              { value: '15+', label: 'Workflows Deployed' },
-              { value: '3', label: 'Active AI Systems' },
-              { value: '$0', label: 'Manual Reporting Hours' },
-            ]}
-          />
+          <SectionReveal delay={0.3} className="mt-20">
+            <div className="glass-card p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                { value: '50+', label: 'Workflows Deployed' },
+                { value: '5', label: 'Active Platforms' },
+                { value: '3', label: 'Federal Verticals Targeted' },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className={i > 0 ? 'md:border-l md:border-pss-gold-dim/20' : ''}
+                >
+                  <div className="font-cinzel text-3xl font-bold gold-text">{stat.value}</div>
+                  <div className="text-pss-grey text-sm mt-2">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </SectionReveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <CTABanner
-        headline="Ready to Automate Your Operation?"
-        buttonText="Talk to PSS"
-        href="/contact"
-      />
+      {/* ─── WORK / PRODUCTS ─── */}
+      <section id="work" className="relative py-32 section-dark">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionReveal className="mb-20">
+            <p className="font-cinzel text-xs tracking-[0.2em] text-pss-gold uppercase mb-4">
+              Portfolio
+            </p>
+            <h2 className="font-cinzel text-3xl md:text-5xl font-semibold text-pss-white gold-underline">
+              What We&apos;ve Built
+            </h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {products.map((product, i) => (
+              <SectionReveal key={i} delay={i * 0.1}>
+                <div className="glass-card p-8 h-full transition-all duration-300 group">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-cinzel text-lg font-semibold text-pss-white tracking-wide">
+                      {product.name}
+                    </h3>
+                    <span
+                      className={`font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border ${
+                        product.status === 'Active'
+                          ? 'text-pss-gold border-pss-gold/30 bg-pss-gold/5'
+                          : 'text-pss-grey border-pss-grey/20 bg-pss-grey/5'
+                      }`}
+                    >
+                      {product.status}
+                    </span>
+                  </div>
+                  <p className="text-pss-grey text-sm leading-relaxed">
+                    {product.description}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-pss-gold-dim group-hover:text-pss-gold text-xs font-cinzel tracking-wider transition-colors">
+                    <span>View Details</span>
+                    <ArrowRight size={12} />
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CONTACT ─── */}
+      <section id="contact" className="relative py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <SectionReveal>
+              <p className="font-cinzel text-xs tracking-[0.2em] text-pss-gold uppercase mb-4">
+                Connect
+              </p>
+              <h2 className="font-cinzel text-3xl md:text-5xl font-semibold text-pss-white gold-underline mb-8">
+                Start a Conversation
+              </h2>
+              <div className="space-y-5 text-pss-grey leading-relaxed">
+                <p>
+                  Whether you&apos;re exploring AI automation for the first time or need to
+                  replace systems that aren&apos;t cutting it — we&apos;d like to hear what
+                  you&apos;re building.
+                </p>
+                <p>
+                  Every engagement begins with a candid conversation about what&apos;s actually
+                  possible and what it takes to get there.
+                </p>
+              </div>
+              <div className="mt-8 flex items-center gap-3 text-pss-gold">
+                <Send size={16} />
+                <a
+                  href="mailto:riley@prometheusss.com"
+                  className="font-mono text-sm hover:text-pss-gold-light transition-colors"
+                >
+                  riley@prometheusss.com
+                </a>
+              </div>
+              <p className="text-pss-grey/60 text-xs mt-2 ml-7">Phoenix, AZ</p>
+            </SectionReveal>
+
+            <SectionReveal delay={0.15}>
+              <div className="glass-card p-8">
+                <ContactForm />
+              </div>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
