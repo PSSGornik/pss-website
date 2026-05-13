@@ -78,6 +78,10 @@ body {
     box-shadow: 0 0 24px rgba(201, 168, 76, 0.25);
   }
 
+  .text-label {
+    @apply font-cinzel text-xs tracking-[0.2em] font-semibold;
+  }
+
   .section-dark {
     background: #111111;
   }
