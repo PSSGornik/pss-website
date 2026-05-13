@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import SectionReveal from '@/components/SectionReveal';
 import ContactForm from '@/components/ContactForm';
+import PhoenixLogo from '@/components/PhoenixLogo';
 
 const stagger = (i: number) => ({ delay: 0.15 * i, duration: 0.7, ease: 'easeOut' as const });
 
@@ -85,14 +86,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={stagger(0)}
           >
-            <Image
-              src="/assets/images/Prometheus_Strategic_Solutions.png"
-              alt="Prometheus Strategic Solutions"
-              width={120}
-              height={120}
-              className="mx-auto mb-8 w-24 h-24 md:w-28 md:h-28"
-              priority
-            />
+            <PhoenixLogo className="mx-auto mb-8 w-40 h-auto md:w-48 lg:w-56" />
           </motion.div>
 
           <motion.h1

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "AI Automation, Agentic Systems & Intelligent Infrastructure for organizations that can't afford to get it wrong. Phoenix, AZ.",
   keywords: ["AI automation", "agentic systems", "AI agents", "infrastructure", "federal", "Phoenix AZ"],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Prometheus Strategic Solutions",
     description: "AI Systems. Built to Last.",
