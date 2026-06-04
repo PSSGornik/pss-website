@@ -57,7 +57,7 @@ export default function TriplyPage() {
     <>
       <PageHero
         headline="Triply"
-        subheadline="AI-powered travel planning that turns 'where should we go?' into a complete itinerary in minutes. Currently in development."
+        subheadline="AI-powered travel planning that turns 'where should we go?' into a complete itinerary in minutes."
         accentColor="#3B82F6"
       >
         <a
@@ -141,14 +141,14 @@ export default function TriplyPage() {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h3 className="font-cinzel text-xl font-semibold text-pss-white">
-                  Currently in Development
+                  Live &amp; Operational
                 </h3>
-                <span className="font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border text-pss-grey border-pss-grey/20 bg-pss-grey/5">
-                  Beta
+                <span className="font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border text-pss-gold border-pss-gold/30 bg-pss-gold/5">
+                  Active
                 </span>
               </div>
               <p className="text-pss-grey leading-relaxed">
-                Triply is being built by the PSS engineering team using the same AI infrastructure that powers our enterprise products. Early access is available for users who want to help shape the product.
+                Triply is live at triply.us — built by the PSS engineering team using the same AI infrastructure that powers our enterprise products. Plan your next trip in minutes.
               </p>
             </div>
           </motion.div>
@@ -172,7 +172,7 @@ export default function TriplyPage() {
                   Plan Your Next Trip with AI
                 </h2>
                 <p className="text-pss-grey mb-8 max-w-xl mx-auto">
-                  Triply is live and accepting early users. Try it out and let us know what you think.
+                  Triply is live. Build a personalized, AI-powered itinerary for your next trip in minutes.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a

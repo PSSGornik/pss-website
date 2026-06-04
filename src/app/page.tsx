@@ -69,7 +69,7 @@ const products = [
   {
     name: 'Triply',
     description: 'AI-powered travel and itinerary platform',
-    status: 'In Development',
+    status: 'Active',
     href: '/triply',
   },
   {
